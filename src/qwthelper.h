@@ -105,7 +105,7 @@ public:
 class MyQwtSymbol : public QwtSymbol
 {
 protected:
-	virtual void renderSymbols(QPainter *pPainter, const QPointF* pPts, int iNumPts) const override;
+	virtual void renderSymbols(QPainter *pPainter, const QPointF* pPts, int iNumPts) const /*override*/;
 
 public:
 	MyQwtSymbol();
@@ -124,7 +124,7 @@ protected:
 protected:
 	virtual void drawDots(QPainter* pPainter,
 		const QwtScaleMap& scX, const QwtScaleMap& scY,
-		const QRectF& rect, int iPtFirst, int iPtLast) const override;
+		const QRectF& rect, int iPtFirst, int iPtLast) const /*override*/;
 
 public:
 	MyQwtCurve();
