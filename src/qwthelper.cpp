@@ -747,7 +747,11 @@ void MyQwtCurve::drawDots(QPainter* pPainter,
 
 		for(int iPt=iPtFirst; iPt<=iPtLast; ++iPt)
 		{
+#if QWT_VER<6
+			QPointF pt(data().x(iPt), data().y(iPt));
+#else
 			QPointF pt = data()->sample(iPt);
+#endif
 			t_real_qwt err = 0;
 			if(m_pvecYErr)
 				err = (*m_pvecYErr)[iPt];
@@ -774,7 +778,11 @@ void MyQwtCurve::drawDots(QPainter* pPainter,
 
 	for(int iPt=iPtFirst; iPt<=iPtLast; ++iPt)
 	{
+#if QWT_VER<6
+		QPointF pt(data().x(iPt), data().y(iPt));
+#else
 		QPointF pt = data()->sample(iPt);
+#endif
 		QPointF ptMid(scX.transform(pt.x()), scY.transform(pt.y()));
 		pPainter->drawEllipse(ptMid, 2, 2);
 	}
