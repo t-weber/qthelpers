@@ -1,2 +1,2 @@
 # qthelpers
-Helper functions for Qt.
+Some helper functions for Qt and Qwt.
